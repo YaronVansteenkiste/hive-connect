@@ -1,0 +1,49 @@
+.navbar {
+    background-color: rgb(5, 1, 8);
+}
+
+.logosection {
+    width: 15%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 0 0 7px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa;
+}
+
+.searchsection {
+    width: 40%;
+}
+
+.searchbar {
+    background-color: rgb(11, 3, 21) !important;
+    color: white;
+    border:none;
+    box-shadow: 0 0 10px #0fa;
+    
+}
+
+.searchtext {
+    color: rgba(244, 244, 255, 0.631);
+    text-shadow: 0 0 7px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa;
+}
+
+.profilesection {
+    width: 20%;
+    display: flex;
+    box-shadow: 0 0 10px #0fa;
+    height: 50px;
+}
+
+.profileicon {
+    width: 40%;
+}
+
+.profilename {
+    width: 60%;
+}
+
