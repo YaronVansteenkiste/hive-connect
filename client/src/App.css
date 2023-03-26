@@ -1,24 +1,123 @@
 body {
-    background-color: rgb(8, 3, 15) !important;
+    background-color: #11111f !important;
 }
 
-.profilesection {
-    text-align: center;
-    color: rgb(255, 248, 248);
-}
-
-.hivebody {
-    display: flex;
-}
-
+/* Leftbar styles */
 .leftbar {
-    height: 1000px;
-    width: 200px;
-    background-color: rgba(13, 3, 22, 0.594)
-}
+    background-color: #27274e;
+    color: #ffffff;
+    padding: 20px;
+  }
+  
+  .leftbar h4 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: #fff;
+  }
+  
+  .leftbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .leftbar li {
+    margin-bottom: 10px;
+  }
+  
+  .postsection {
+    background-color: #191932;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post {
+    margin-bottom: 20px;
+  }
+  
+  .post h3 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .post p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0;
+  }
+  
+  /* Rightbar styles */
+  .rightbar {
+    background-color: #11111f;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .rightbar h4 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: #fff;
+  }
+  
+  .rightbar form {
+    margin-bottom: 20px;
+  }
+  
+  .rightbar input,
+  .rightbar textarea {
+    background-color: #1e1e3c;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .rightbar input::placeholder,
+  .rightbar textarea::placeholder {
+    color: #a9a9a9;
+  }
+  
+  .rightbar button {
+    background-color: #00b3e6;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .rightbar button:hover {
+    background-color: #0087b3;
+  }
+  
+  .rightbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .rightbar li {
+    margin-bottom: 10px;
+  }
+  
 
-.postsection {
-    height: 1000px;
-    width: 750px;
-    background-color: rgba(5, 1, 8, 0.262);
-}
+  .hivebody {
+    display: flex;
+    height: calc(100vh - 60px);
+    
+  }
+  
+
+  .leftbar,
+  .postsection,
+  .rightbar {
+    height: 100%;
+    flex-grow: 1;
+  }
