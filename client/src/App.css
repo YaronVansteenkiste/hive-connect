@@ -2,11 +2,13 @@ body {
     background-color: #11111f !important;
 }
 
+
 /* Leftbar styles */
 .leftbar {
     background-color: #27274e;
     color: #ffffff;
     padding: 20px;
+    width: 2%;
   }
   
   .leftbar h4 {
@@ -24,17 +26,38 @@ body {
   .leftbar li {
     margin-bottom: 10px;
   }
+
+  .createpostsection {
+    width: 40%;
+    margin: auto;
+  }
+
+  .createpost {
+    background-color: #191032 !important;
+  }
+
+  .post-container {
+    background-color: #09040f;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin: auto;
+    width: 70%;
+    text-align:center;
+  }
   
   .postsection {
-    background-color: #191932;
+    background-color: #11111f;
     color: #fff;
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
+
+  
   
   .post {
     margin-bottom: 20px;
+    width: 100%;
   }
   
   .post h3 {
@@ -52,9 +75,10 @@ body {
   
   /* Rightbar styles */
   .rightbar {
-    background-color: #11111f;
+    background-color: #0a0a13;
     color: #fff;
-    padding: 20px;
+    width: 20%;
+    margin-left: 0;
   }
   
   .rightbar h4 {
@@ -109,15 +133,7 @@ body {
   
 
   .hivebody {
-    display: flex;
-    height: calc(100vh - 60px);
-    
-  }
-  
-
-  .leftbar,
-  .postsection,
-  .rightbar {
-    height: 100%;
-    flex-grow: 1;
+    margin: auto;
+    height: calc(100vh - 70px);
+    width: 100%;
   }

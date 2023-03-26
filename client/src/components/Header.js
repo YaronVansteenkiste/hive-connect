@@ -1,5 +1,5 @@
 import React  from 'react'
-import { FloatingLabel } from 'react-bootstrap'
+import { FloatingLabel, Button } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 
 import './Header.css';
@@ -9,13 +9,13 @@ import exampleImage from './images/example1.jpg'
 function Header ()  {
     return (
       <div className='navbar'>
-        <div className='logosection'>
-          Hive
-        </div>
-        <div className='searchsection'>
-        <FloatingLabel className='searchtext' controlId="floatingInputGrid" label="Search Community..">
-              <Form.Control className='searchbar' placeholder="Search Community" />
-            </FloatingLabel>
+        <ul class="navbar-nav ml-auto">
+        </ul>
+        <div className='topnavigationsection'>
+        <Button variant="dark">Best</Button>
+        <Button variant="dark">Hot</Button>
+        <Button variant="dark">Top</Button>
+        <Button variant="dark">...</Button>
         </div>
         <div className='profilesection'>
           <div className='profileicon'>

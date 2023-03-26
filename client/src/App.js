@@ -2,11 +2,17 @@ import './App.css';
 import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap';
 
 import Register from './pages/register';
 
 import postImageExample from './components/images/example1.jpg'
 import postImageExample2 from './components/images/example2.jpg'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import LeftSidebar from './components/LeftSideBar';
 
 
 function App() {
@@ -15,75 +21,69 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/" element={
-            <>
-              <Header />
+          <>
+            <div style={{ display: 'flex' }}>
+              <LeftSidebar />
               <div className="hivebody">
-                <div className="leftbar">
-                  <h4>Notifications</h4>
-                  <ul>
-                    <li>New message from user123</li>
-                    <li>You have a new follower!</li>
-                    <li>Your post has been featured!</li>
-                  </ul>
-                </div>
-                <div className='createpostsection'>
-                  <form>
-                    <div className="mb-3">
-                      <input type="text" className="form-control" id="post-title" placeholder="Create post"/>
-                    </div>
-                  </form>
-                </div>
-                <div className="postsection">
-                  <div className="post">
-                    <h3>Example Post 1</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Morbi in lacus eu nulla vulputate sagittis.
-                    </p>
-                    <div className="post-actions">
-                      <button className="like-btn">
-                        <i className="far fa-thumbs-up"></i> Augment
-                      </button>
-                      <button className="dislike-btn">
-                        <i className="far fa-thumbs-down"></i> Corrupt
-                      </button>
-                    </div>
-                    <img src={postImageExample} alt="example" />
+                  <div>
+                    <Header></Header>
                   </div>
-                  <div className="post">
-                    <h3>Example Post 2</h3>
-                    <p>
-                      Suspendisse tincidunt odio sed leo pharetra porttitor.
-                      Fusce vel tristique felis. Fusce lacinia sagittis orci,
-                      ac mattis est bibendum at.
-                    </p>
-                    <div className="post-actions">
-                      <button className="like-btn">
-                        <i className="far fa-thumbs-up"></i> Augment
-                      </button>
-                      <button className="dislike-btn">
-                        <i className="far fa-thumbs-down"></i> Corrupt
-                      </button>
+                  <div>
+                  <div className="postsection">
+                    <div className="post-container">
+                    <div className='createpostsection'>
+                      <form>
+                        <div className="mb-3">
+                          <Form.Control
+                            className='createpost'
+                            type="post"
+                            id="inputPost5"
+                            placeholder='Create your post.'
+                          />
+                        </div>
+                      </form>
                     </div>
-                    <img src={postImageExample2} alt="example" />
-                  </div>
-                </div>
-                <div className='rightbar'>
+                      <h3>Example Post 1</h3>
+                      <img src={postImageExample} alt="example" />
+                      <div className="post-actions">
+                        <Button variant="primary">
+                          <FontAwesomeIcon icon={faThumbsUp} /> Augment
+                        </Button>
+                        <Button variant="danger">
+                          <FontAwesomeIcon icon={faThumbsDown} /> Corrupt
+                        </Button>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Morbi in lacus eu nulla vulputate sagittis.
+                      </p>
+                      <div className="post-buttons">
+                        <button className="btn btn-primary"><i className="fas fa-reply"></i> Reply</button>
+                        <button className="btn btn-success"><i className="fas fa-share"></i> Share</button>
+                        <button className="btn btn-warning"><i className="far fa-bookmark"></i> Save</button>
+                      </div>
+                    </div>
+                    <div className='rightbar'>
                     <hr />
-                    <h4>Current Community</h4>
-                    <ul>
-                      <li>CyberpunkCity</li>
-                      <li>TheNeonDistrict</li>
-                      <li>TechnoUtopia</li>
-                    </ul>
+                      <h4>Current Community</h4>
+                      <ul>
+                        <li>CyberpunkCity</li>
+                        <li>TheNeonDistrict</li>
+                        <li>TechnoUtopia</li>
+                      </ul>
+                    </div>
                   </div>
+                
+                </div>
               </div>
-            </>
-          }/>
-        </Routes>
+            </div>
+          </>
+        } />
+      </Routes>
     </Router>
   )
 }
 
 export default App;
+
               

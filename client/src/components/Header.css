@@ -1,6 +1,8 @@
 .navbar {
     background-color: #09040f;
+    width: 100%;
 }
+
 
 .neon-icon {
     max-width: 100%;
@@ -23,37 +25,6 @@
     text-shadow: 0 0 10px #f0f;
   }
   
-
-.logosection {
-    width: 15%;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-    text-shadow: 0 0 7px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa;
-}
-
-.searchsection {
-    width: 40%;
-}
-
-.searchbar {
-    background-color: #191032 !important;
-    color: white;
-    border:none;
-    box-shadow: 0 0 3px #0fa;
-    
-}
-
-.searchtext {
-    color: rgba(244, 244, 255, 0.631);
-    text-shadow: 0 0 7px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa;
-}
-
 .profilesection {
     width: 20%;
     display: flex;
@@ -68,3 +39,16 @@
     width: 60%;
 }
 
+.navbar-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-item {
+  margin-right: 1rem;
+}
+
+.navbar-item:last-child {
+  margin-right: 0;
+}

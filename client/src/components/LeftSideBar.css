@@ -1,0 +1,36 @@
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom:30px;
+    text-align: center;
+    text-shadow: 0 0 7px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa;
+}
+.searchbar {
+    background-color: #191032 !important;
+    color: white;
+    border:none;
+    box-shadow: 0 0 3px #0fa;
+    
+}
+
+.searchtext {
+    color: rgba(244, 244, 255, 0.631);
+    text-shadow: 0 0 7px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa;
+}
+
+.leftsidebar{
+    background-color: #09040f;
+    padding: 40px;
+    width: 20%;
+}
+
+.leftsidebuttons {
+    background-color: #191032 !important;
+    color: rgba(244, 244, 255, 0.631);
+    text-shadow: 0 0 82px #0fa;
+}
