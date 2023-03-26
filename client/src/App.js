@@ -14,8 +14,12 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import LeftSidebar from './components/LeftSideBar';
 
+import 'animate.css/animate.min.css';
+
+
 
 function App() {
+
   return (
     <Router>
       <Routes>
@@ -34,22 +38,22 @@ function App() {
                     <div className='createpostsection'>
                       <form>
                         <div className="mb-3">
-                          <Form.Control
-                            className='createpost'
+                        <Form.Control
+                            className='createpost rounded-pill'
                             type="post"
                             id="inputPost5"
                             placeholder='Create your post.'
-                          />
+                        />
                         </div>
                       </form>
                     </div>
                       <h3>Example Post 1</h3>
                       <img src={postImageExample} alt="example" />
                       <div className="post-actions">
-                        <Button variant="primary">
+                        <Button>
                           <FontAwesomeIcon icon={faThumbsUp} /> Augment
                         </Button>
-                        <Button variant="danger">
+                        <Button>
                           <FontAwesomeIcon icon={faThumbsDown} /> Corrupt
                         </Button>
                       </div>
@@ -58,9 +62,9 @@ function App() {
                         Morbi in lacus eu nulla vulputate sagittis.
                       </p>
                       <div className="post-buttons">
-                        <button className="btn btn-primary"><i className="fas fa-reply"></i> Reply</button>
-                        <button className="btn btn-success"><i className="fas fa-share"></i> Share</button>
-                        <button className="btn btn-warning"><i className="far fa-bookmark"></i> Save</button>
+                        <button className="btn btn-dark"><i className="fas fa-reply"></i> Reply</button>
+                        <button className="btn btn-dark"><i className="fas fa-share"></i> Share</button>
+                        <button className="btn btn-dark"><i className="far fa-bookmark"></i> Save</button>
                       </div>
                     </div>
                     <div className='rightbar'>
