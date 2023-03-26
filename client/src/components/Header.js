@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form'
 
 import './Header.css';
 
+import exampleImage from './images/example1.jpg'
+
 function Header ()  {
     return (
       <div className='navbar'>
@@ -17,10 +19,11 @@ function Header ()  {
         </div>
         <div className='profilesection'>
           <div className='profileicon'>
-            profile icon
+            <img src={exampleImage} alt="Profile Icon" className="neon-icon" />
           </div>
           <div className='profilename'>
-            profile name
+            <span className="neon-text">Keanu Reeves</span>
+            <label className='neon-subtext'>540 points augmented</label>
           </div>
         </div>
       </div>

@@ -1,6 +1,28 @@
 .navbar {
-    background-color: rgb(5, 1, 8);
+    background-color: #09040f;
 }
+
+.neon-icon {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #f0f, 0 0 10px #fff;
+  }
+  
+  .neon-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px #f0f, 0 0 20px #f0f, 0 0 30px #f0f, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+  }
+
+  .neon-subtext {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: rgb(223, 17, 17);
+    text-shadow: 0 0 10px #f0f;
+  }
+  
 
 .logosection {
     width: 15%;
@@ -18,10 +40,10 @@
 }
 
 .searchbar {
-    background-color: rgb(11, 3, 21) !important;
+    background-color: #191032 !important;
     color: white;
     border:none;
-    box-shadow: 0 0 10px #0fa;
+    box-shadow: 0 0 3px #0fa;
     
 }
 
@@ -35,12 +57,11 @@
 .profilesection {
     width: 20%;
     display: flex;
-    box-shadow: 0 0 10px #0fa;
     height: 50px;
 }
 
 .profileicon {
-    width: 40%;
+    width: 20%;
 }
 
 .profilename {
