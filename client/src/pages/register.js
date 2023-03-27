@@ -28,7 +28,6 @@ const Register  = ()=> {
 
   console.log(err);
 
-//bijleren usestate
 function goHome() {
     window.location='/';
   }
