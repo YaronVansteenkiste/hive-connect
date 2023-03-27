@@ -7,6 +7,14 @@
     text-shadow: 0 0 7px #fff,
     0 0 42px #0fa,
     0 0 82px #0fa;
+    cursor: pointer;
+}
+
+.logo:hover {
+    color: yellow;
+    text-shadow: 0 0 7px yellow,
+    0 0 42px yellow,
+    0 0 82px yellow;
 }
 .searchbar {
     background-color: #191032 !important;

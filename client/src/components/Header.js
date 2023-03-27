@@ -1,31 +1,18 @@
-import React, { useState } from 'react';
-import { FloatingLabel, Button } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
+import React from 'react';
+import { Button } from 'react-bootstrap';
 
 import './Header.css';
 
 import exampleImage from './images/example1.jpg';
 
 function Header() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
-
+  function dropDownClick() {
+    document.getElementById('myDropdown').classList.toggle("show");
+    document.getElementById('rightbar').classList.toggle('expand');
+  } 
   return (
     <div className='navbar'>
       <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
-          <a href="#" className="nav-link">
-            <i className="fa fa-bell"></i>
-            <span className="badge">3</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="#" className="nav-link">
-            <i className="fa fa-comment"></i>
-            <span className="badge">5</span>
-          </a>
-        </li>
       </ul>
       <div className='topnavigationsection'>
         <Button variant="dark">Best</Button>
@@ -33,21 +20,21 @@ function Header() {
         <Button variant="dark">Top</Button>
         <Button variant="dark">...</Button>
       </div>
-      <div className='profilesection'>
+      <div className='profilesection' onClick={dropDownClick}>
         <div className='profileicon'>
-          <img src={exampleImage} alt="Profile Icon" className="neon-icon" onClick={toggleDropdown} />
-          {dropdownOpen && (
-            <div className="dropdown-menu">
-              <a className="dropdown-item" href="#">My Profile</a>
-              <a className="dropdown-item" href="#">Settings</a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">Logout</a>
-            </div>
-          )}
+          <img src={exampleImage} alt="Profile Icon" className="neon-icon"/>
         </div>
         <div className='profilename'>
-          <span className="neon-text">Keanu Reeves</span>
-          <label className='neon-subtext'>540 points augmented</label>
+          <div className='usernameSection'>
+            <span className="neon-text">Keanu Reeves</span>
+          </div>
+          <div>
+          <label className='neon-subtext'>540 points</label>
+          </div>
+        </div>
+        <div id='myDropdown' className='dropdown-content'>
+          <a href='/login'>Login</a>
+          <a href='/register'>Register</a>
         </div>
       </div>
     </div>

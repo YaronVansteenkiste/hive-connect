@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
 import axios from 'axios';
+import './login.css'
 
-const Register  = ()=> {
+const Login  = ()=> {
+  
+
   const [inputs, setInputs] = useState ( {
     username:"",  
-    email: "",
-    password: "",
-    name: ""
+    password: ""
   })
 
   const [err, setErr] = useState (null);
@@ -20,7 +21,7 @@ const Register  = ()=> {
     e.preventDefault()
 
     try {
-      await axios.post("http://localhost:8800/api/auth/register", inputs)
+      await axios.post("http://localhost:8800/api/auth/login", inputs)
     } catch (err) {
       setErr(err);
     }
@@ -28,10 +29,14 @@ const Register  = ()=> {
 
   console.log(err);
 
-//bijleren usestate
-function goHome() {
+  function goHome() {
     window.location='/';
   }
+
+//bijleren usestate
+
+
+
 
   return (
       <div>
@@ -43,37 +48,15 @@ function goHome() {
                 <Card.Body className='accountform'>
                   <div className="mb-3 mt-md-4">
                   <h5 className="logo" onClick={goHome}>Hive</h5>
-                    <div className="mb-3">
+                    <div>
                       <Form>
                       <Form.Group className="mb-3" controlId="Username">
                           <Form.Label className="text-center">Username</Form.Label>
                           <Form.Control type="text" placeholder="Enter Username" name='username'onChange={handleChange}/>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="Name">
-                          <Form.Label className="text-center">Name</Form.Label>
-                          <Form.Control type="text" placeholder="Enter Name" name='name'onChange={handleChange}/>
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Form.Label className="text-center">
-                            Email address
-                          </Form.Label>
-                          <Form.Control type="email" placeholder="Enter email" name='email'onChange={handleChange}/>
-                        </Form.Group>
-
-                        <Form.Group
-                          className="mb-3"
-                          controlId="formBasicPassword"
-                        >
+                        <Form.Group className="mb-3" controlId="Password">
                           <Form.Label>Password</Form.Label>
-                          <Form.Control type="password" placeholder="Password"/>
-                        </Form.Group>
-                        <Form.Group
-                          className="mb-3"
-                          controlId="formBasicPassword"
-                        >
-                          <Form.Label>Confirm Password</Form.Label>
                           <Form.Control type="password" placeholder="Password" name='password'onChange={handleChange}/>
                         </Form.Group>
                         <Form.Group
@@ -82,15 +65,15 @@ function goHome() {
                         ></Form.Group>
                         <div className="d-grid">
                           <Button onClick={handleClick} variant="primary" type="submit">
-                            Create Account
+                            Sign in
                           </Button>
                         </div>
                       </Form>
                       <div className="mt-3">
                         <p className="mb-0  text-center">
-                          Already have an account?{' '}
-                          <a href="/login" className="text-primary fw-bold">
-                            Sign In
+                          Don't have an account?{' '}
+                          <a href="/register" className="text-primary fw-bold">
+                            Sign up
                           </a>
                         </p>
                       </div>
@@ -105,4 +88,4 @@ function goHome() {
     );
 }
 
-export default Register;
+export default Login;

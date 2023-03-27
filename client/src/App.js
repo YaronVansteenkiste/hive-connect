@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 
 import Register from './pages/register';
+import Login from './pages/login'
 
 import postImageExample from './components/images/example1.jpg'
-import postImageExample2 from './components/images/example2.jpg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
@@ -24,6 +24,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={
           <>
             <div style={{ display: 'flex' }}>
@@ -44,6 +45,7 @@ function App() {
                             id="inputPost5"
                             placeholder='Create your post.'
                         />
+                        <Button>Post</Button>
                         </div>
                       </form>
                     </div>
@@ -67,7 +69,7 @@ function App() {
                         <button className="btn btn-dark"><i className="far fa-bookmark"></i> Save</button>
                       </div>
                     </div>
-                    <div className='rightbar'>
+                    <div id='rightbar' className='rightbar'>
                     <hr />
                       <h4>Current Community</h4>
                       <ul>
