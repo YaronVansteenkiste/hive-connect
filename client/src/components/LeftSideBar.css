@@ -11,10 +11,10 @@
 }
 
 .logo:hover {
-    color: yellow;
-    text-shadow: 0 0 7px yellow,
-    0 0 42px yellow,
-    0 0 82px yellow;
+    color: rgb(47, 0, 255);
+    text-shadow: 0 0 7px rgb(47, 0, 255),
+    0 0 42px rgb(47, 0, 255),
+    0 0 82px rgb(47, 0, 255);
 }
 .searchbar {
     background-color: #191032 !important;
@@ -34,11 +34,8 @@
 .leftsidebar{
     background-color: #09040f;
     padding: 40px;
-    width: 20%;
-}
-
-.leftsidebuttons {
-    background-color: #191032 !important;
-    color: rgba(244, 244, 255, 0.631);
-    text-shadow: 0 0 82px #0fa;
+    width: 325px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
 }

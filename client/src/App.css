@@ -1,108 +1,13 @@
 body {
     background-color: #11111f !important;
 }
-
-
-/* Leftbar styles */
-.leftbar {
-    background-color: #27274e;
-    color: #ffffff;
-    padding: 20px;
-    width: 2%;
-  }
-  
-  .leftbar h4 {
-    font-size: 1.5rem;
-    margin-top: 0;
-    color: #fff;
-  }
-  
-  .leftbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .leftbar li {
-    margin-bottom: 10px;
-  }
-
-  .createpostsection {
-    width: 40%;
-    margin: auto;
-  }
-
   .createpost {
     background-color: #191032 !important;
   }
 
-  .post-container {
-    background-color: #09040f;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin: auto;
-    width: 70%;
-    text-align:center;
-    border-radius: 30px;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-  }
-
-  .post-container.animate__fadeInUp {
-    animation-name: fadeInUp;
-  }
-
-  .post-actions {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .post-actions button {
-    color: #fff;
-    background-color: #2e2e4c;
-    border-radius: 30px;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .post-actions button:hover {
-    background-color: #5858a6;
-  }
   
   .hoverable:hover {
     background-color: #191032;
-  }
-  
-  .postsection {
-    background-color: #11111f;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-  }
-
-  
-  
-  .post {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  
-  .post h3 {
-    font-size: 2rem;
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #fff;
-  }
-  
-  .post p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-top: 0;
   }
   
   /* Rightbar styles */
@@ -110,7 +15,7 @@ body {
     background-color: #0a0a13;
     color: #fff;
     width: 20%;
-    margin-left: 0;
+    margin-left: auto;
     border-radius: 30px;
   }
 
@@ -140,6 +45,18 @@ body {
   .rightbar input::placeholder,
   .rightbar textarea::placeholder {
     color: #a9a9a9;
+  }
+
+  .postcontent {
+    display: inline-flex;
+  }
+  
+  .likecontainer {
+    margin-right: 15px;
+  }
+
+  .poststats {
+    padding-top: 10px;
   }
   
   .rightbar button {

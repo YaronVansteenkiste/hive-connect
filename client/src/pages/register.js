@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
 import axios from 'axios';
 
+import { useNavigate } from 'react-router-dom';
+
 const Register  = ()=> {
   const [inputs, setInputs] = useState ( {
     username:"",  
@@ -16,11 +18,14 @@ const Register  = ()=> {
     setInputs(prev=>({...prev, [e.target.name]: e.target.value }));
   }
 
+  const navigate = useNavigate()
+
   const handleClick = async e=> {
     e.preventDefault()
 
     try {
       await axios.post("http://localhost:8800/api/auth/register", inputs)
+      navigate("/");
     } catch (err) {
       setErr(err);
     }

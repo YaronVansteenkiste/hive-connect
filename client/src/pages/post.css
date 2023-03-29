@@ -1,0 +1,77 @@
+.post-container {
+    background-color: #09040f;
+    padding: 20px;
+    margin: 20px auto auto 20px;
+    width: 585px;
+    text-align:center;
+    border-radius: 30px;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    cursor: pointer;
+  }
+
+  .post-image {
+    width: 104%;
+  }
+
+  .post-container:hover {
+    background-color: #0a0511;
+    
+  }
+
+  .post-container.animate__fadeInUp {
+    animation-name: fadeInUp;
+  }
+
+  .post-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .post-actions button {
+    color: #fff;
+    background-color: #2e2e4c;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .post-actions button:hover {
+    background-color: #5858a6;
+  }
+  
+  .postsection {
+    background-color: #11111f;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    margin-left: 500px;
+  }
+
+  
+  
+  .post {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .post h3 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .post p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0;
+  }
+
+  .post-list {
+    margin: auto;
+  }

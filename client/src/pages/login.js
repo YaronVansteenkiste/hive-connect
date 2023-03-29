@@ -1,28 +1,47 @@
 import { useContext, useState } from 'react';
 import { Col, Button, Row, Container, Card, Form} from 'react-bootstrap';
 import './login.css'
-import { Link, useNavigate } from "react-router-dom";
-import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import { UserContext, login } from '../components/context/UserContext.js';
+
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  
+  const [inputs, setInputs] = useState({
+    username: "",
+    password: "",
+  });
   const [err, setErr] = useState(null);
+  const { setCurrentUser } = useContext(UserContext);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const navigate = useNavigate()
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8800/api/auth/login', { username, password });
-      navigate('/');
+      const user = await login(inputs);
+      setCurrentUser(user);
+      navigate("/");
+      localStorage.setItem('username', user.username);
     } catch (err) {
-      setErr(err.response.data);
+      if (err.response) {
+        setErr(err.response.data);
+      } else {
+        setErr("An error occurred.");
+        console.log(err);
+      }
     }
   };
 
   function goHome() {
     window.location='/';
   }
+  
 
   return (
     <div>
@@ -34,20 +53,20 @@ const Login = () => {
                 <div className="mb-3 mt-md-4">
                 <h5 className="logo" onClick={goHome}>Hive</h5>
                   <div>
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleLogin}>
                     {err && err}
                       <Form.Group className="mb-3" controlId="formUsername">
                         <Form.Label className="text-center">Username</Form.Label>
-                        <Form.Control type="text" placeholder="Enter Username" name="username" value={username} onChange={(event) => setUsername(event.target.value)} />
+                        <Form.Control type="text" placeholder="Enter Username" name="username" onChange={handleChange} />
                       </Form.Group>
 
-                      <Form.Group className="mb-3" controlId="Password" name='username'>
+                      <Form.Group className="mb-3" controlId="Password" name='username' onChange={handleChange}>
                           <Form.Label>Password</Form.Label>
-                          <Form.Control type="password" placeholder="Password" name='password' value={password} onChange={(event) => setPassword(event.target.value)} />
+                          <Form.Control type="password" placeholder="Password" name='password' onChange={handleChange} />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicCheckbox"></Form.Group>
                       <div className="d-grid">
-                        <Button variant="primary" onClick={handleSubmit}>Sign in</Button>
+                        <Button variant="primary" onClick={handleLogin}>Sign in</Button>
                       </div>
                     </Form>
                     <div className="mt-3">

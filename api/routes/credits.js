@@ -1,8 +1,8 @@
 import express from "express";
-import {  } from "../controllers/upvote.js";
+import { getCredits } from "../controllers/credits.js";
 
 const router = express.Router() 
 
-router.get("",)
+router.get("/:id", getCredits)
 
 export default router

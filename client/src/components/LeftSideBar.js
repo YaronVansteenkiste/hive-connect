@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faNetworkWired, faNewspaper, faFire, faSearch} from "@fortawesome/free-solid-svg-icons";
-import { FloatingLabel, Form } from "react-bootstrap";
+import { faSpaceShuttle, faNetworkWired, faNewspaper, faFire, faSearch} from "@fortawesome/free-solid-svg-icons";
+import { FloatingLabel, Form, Button } from "react-bootstrap";
 import './LeftSideBar.css'
 
 
@@ -21,16 +21,13 @@ function LeftSidebar() {
       </form>
       <ul className="list-unstyled">
         <li className="mb-2">
-          <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faHome} className="mr-2" />Home</button>
+          <Button className="w-100 rounded-100"><FontAwesomeIcon icon={faSpaceShuttle}/> Home</Button>
         </li>
         <li className="mb-2">
-          <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faNetworkWired} className="mr-2" />Network</button>
+          <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faNetworkWired}/> Network</button>
         </li>
         <li className="mb-2">
-          <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faNewspaper} className="mr-2" />News</button>
-        </li>
-        <li className="mb-2">
-          <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faFire} className="mr-2" />Hot</button>
+          <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faNewspaper}/> News</button>
         </li>
       </ul>
       <hr className="leftsidebuttons" />
