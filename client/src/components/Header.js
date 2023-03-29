@@ -9,7 +9,14 @@ import './Header.css';
 
 import exampleImage from './images/example1.jpg';
 
+import Update from "../components/update/Update.js"
+
 import axios from 'axios';
+import { makeRequest } from "../axios.js";
+import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
+
+
+
 
 function Header() {
 
@@ -17,27 +24,23 @@ function Header() {
   const { setCurrentUser } = useContext(UserContext);
   const { currentUser } = useContext(UserContext);
 
+  const [openUpdate, setOpenUpdate] = useState(false);
 
-  useEffect(() => {
-    const getCredits = async () => {
-      const res = await axios.get(`http://localhost:8800/api/credits/${currentUser.id}`);
-      var credits = res.data;
-      document.getElementById('credittag').innerHTML = credits.credits + " credits";
-    };
-    getCredits();
-  }, [currentUser]);
-
-
+  const { isLoading, error, data } = useQuery(["user"], () =>
+    makeRequest.get("/users/find/" + currentUser.id).then((res) => {
+      return res.data;
+    })
+  );
 
   const logout = async () => {
-    await axios.post("http://localhost:8800/api/auth/logout", null, {
+    await axios.post("http://localhost:8800/api/auth/logout",  {
       withCredentials: true,
     });
-    localStorage.removeItem('username');
+    localStorage.clear();
     setCurrentUser(null);
   }
 
-  const username = localStorage.getItem('username');
+  const username = localStorage.getItem('user');
 
   function dropDownClick() {
     document.getElementById('myDropdown').classList.toggle("show");
@@ -57,14 +60,15 @@ function Header() {
       {username ? (
         <div className='profilesection' onClick={dropDownClick}>
           <div className='profileicon'>
-            <img src={exampleImage} alt="Profile Icon" className="neon-icon" />
+            <img src={"/upload/"+currentUser
+            .coverPic} alt="Profile Icon" className="neon-icon" />
           </div>
           <div className='profilename'>
             <div className='usernameSection'>
-              <span className="neon-text">{username}</span>
+              <span className="neon-text">{currentUser.username}</span>
             </div>
             <div>
-              <label id='credittag' className='neon-subtext'></label>
+              <label id='credittag' className='neon-subtext'>{currentUser.credits} credits augmented</label>
             </div>
           </div>
           <div id='myDropdown' className='dropdown-content'>

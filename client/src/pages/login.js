@@ -12,7 +12,6 @@ const Login = () => {
     password: "",
   });
   const [err, setErr] = useState(null);
-  const { setCurrentUser } = useContext(UserContext);
 
   const navigate = useNavigate()
 
@@ -20,14 +19,13 @@ const Login = () => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const { login } = useContext(UserContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const user = await login(inputs);
-      setCurrentUser(user);
+      await login(inputs);
       navigate("/");
-      localStorage.setItem('username', user.username);
     } catch (err) {
       if (err.response) {
         setErr(err.response.data);

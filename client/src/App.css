@@ -1,50 +1,9 @@
 body {
     background-color: #11111f !important;
 }
-  .createpost {
-    background-color: #191032 !important;
-  }
-
   
   .hoverable:hover {
     background-color: #191032;
-  }
-  
-  /* Rightbar styles */
-  .rightbar {
-    background-color: #0a0a13;
-    color: #fff;
-    width: 20%;
-    margin-left: auto;
-    border-radius: 30px;
-  }
-
-  .expand {margin-top: 80px;}
-  
-  .rightbar h4 {
-    font-size: 1.5rem;
-    margin-top: 0;
-    color: #fff;
-  }
-  
-  .rightbar form {
-    margin-bottom: 20px;
-  }
-  
-  .rightbar input,
-  .rightbar textarea {
-    background-color: #1e1e3c;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-  
-  .rightbar input::placeholder,
-  .rightbar textarea::placeholder {
-    color: #a9a9a9;
   }
 
   .postcontent {

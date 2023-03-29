@@ -24,6 +24,7 @@ import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import LeftSidebar from './components/LeftSideBar.js';
 
 import 'animate.css/animate.min.css';
+import Profile from './pages/profile.js';
 
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/" element={<div><Home /></div>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/users/:id" element={<Profile />} />
         </Routes>
       </Router>
     </QueryClientProvider>
