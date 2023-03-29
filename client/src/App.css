@@ -1,3 +1,26 @@
+@keyframes move-it {
+  0% {
+    background-position: initial;
+  }
+  100% {
+    background-position: 100px 0px;
+  }
+}
+
+body {  
+  background: repeating-linear-gradient(
+  45deg,
+  #11111f,
+  #11111f 5%,
+  #09040f 5%,
+  #09040f 10%
+);
+  background-size: 100px 100px;
+  animation: move-it 3s linear infinite;
+}
+
+
+
 body {
     background-color: #11111f !important;
 }
@@ -47,4 +70,22 @@ body {
     margin: auto;
     height: calc(100vh - 70px);
     width: 100%;
+  }
+
+  .createprofileicon {
+    width: 60px;
+  }
+
+  .searchtext {
+    width:100%;
+  }
+
+  .createpostcontainer {
+    background-color: #09040f;
+    padding: 20px;
+    margin: 20px auto auto 20px;
+    width: 585px;
+    border-radius: 30px;
+    cursor: text;
+    display:inline-flex;
   }

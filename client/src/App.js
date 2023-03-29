@@ -23,7 +23,6 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import LeftSidebar from './components/LeftSideBar.js';
 
-import 'animate.css/animate.min.css';
 import Profile from './pages/profile.js';
 
 

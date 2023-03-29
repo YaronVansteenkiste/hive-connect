@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Stack } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket, faFire, faWind, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faRocket, faFire, faWind, faEllipsis , faPlus, faMessage, faMobile, faFaceLaugh} from '@fortawesome/free-solid-svg-icons';
 
 import { UserContext } from './context/UserContext.js'
 
@@ -49,19 +49,23 @@ function Header() {
 
   return (
     <div className='navbar'>
-      <ul className="navbar-nav ml-auto">
-      </ul>
-      <Stack direction='horizontal' gap='3'>
-        <Button variant="dark"><FontAwesomeIcon icon={faRocket} /> Best</Button>
-        <Button variant="dark"><FontAwesomeIcon icon={faFire} /> Hot</Button>
-        <Button variant="dark"><FontAwesomeIcon icon={faWind} /> Top</Button>
-        <Button variant="dark"> <FontAwesomeIcon icon={faEllipsis} /> </Button>
-      </Stack>
+      <div className='filters'>
+      <Button className='headerbuttons' variant="dark"><FontAwesomeIcon icon={faRocket} /> Best</Button>
+        <Button className='headerbuttons' variant="dark"><FontAwesomeIcon icon={faFire} /> Hot</Button>
+        <Button className='headerbuttons' variant="dark"><FontAwesomeIcon icon={faWind} /> Top</Button>
+        <Button className='headerbuttons' variant="dark"> <FontAwesomeIcon icon={faEllipsis} /> </Button>
+      </div>
+      <div className='quickprofile'>
+      <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faPlus} /></Button>
+        <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faMessage} /></Button>
+        <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faMobile} /></Button>
+        <Button className='headerbuttons' variant="warning"> <FontAwesomeIcon icon={faFaceLaugh} /> </Button>
+      </div>
       {username ? (
+        
         <div className='profilesection' onClick={dropDownClick}>
           <div className='profileicon'>
-            <img src={"/upload/"+currentUser
-            .coverPic} alt="Profile Icon" className="neon-icon" />
+            <img src={exampleImage} alt="Profile Icon" className="neon-icon" />
           </div>
           <div className='profilename'>
             <div className='usernameSection'>

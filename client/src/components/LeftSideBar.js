@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpaceShuttle, faNetworkWired, faNewspaper, faFire, faSearch} from "@fortawesome/free-solid-svg-icons";
+import { faSpaceShuttle, faNetworkWired, faNewspaper, faFire, faSearch, faCalendar, faShop} from "@fortawesome/free-solid-svg-icons";
 import { FloatingLabel, Form, Button } from "react-bootstrap";
 import './LeftSideBar.css'
 
@@ -19,7 +19,7 @@ function LeftSidebar() {
           </div>
         </div>
       </form>
-      <ul className="list-unstyled">
+      <ul className="list">
         <li className="mb-2">
           <Button className="w-100 rounded-100"><FontAwesomeIcon icon={faSpaceShuttle}/> Home</Button>
         </li>
@@ -29,18 +29,24 @@ function LeftSidebar() {
         <li className="mb-2">
           <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faNewspaper}/> News</button>
         </li>
+        <li className="mb-2">
+          <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faCalendar}/> Event</button>
+        </li>
+        <li className="mb-2">
+          <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faShop}/> Shop</button>
+        </li>
       </ul>
       <hr className="leftsidebuttons" />
       <h6 className="text-light mb-3">My networks</h6>
       <ul className="list-unstyled">
         <li className="mb-2">
-          <a href="#" className="text-light">Example Community 1</a>
+          <a href="#" className="text-light">CyberpunkCity</a>
         </li>
         <li className="mb-2">
-          <a href="#" className="text-light">Example Community 2</a>
+          <a href="#" className="text-light">TheNeonDistrict</a>
         </li>
         <li className="mb-2">
-          <a href="#" className="text-light">Example Community 3</a>
+          <a href="#" className="text-light">TechnoUtopia</a>
         </li>
       </ul>
     </div>

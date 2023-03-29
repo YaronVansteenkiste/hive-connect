@@ -1,6 +1,19 @@
 .navbar {
     background-color: #09040f;
-    width: 100%;
+    margin-left: 318px;
+}
+
+.filters {
+  padding:10px;
+  width: 54%;
+}
+
+.headerbuttons {
+  margin: 10px;
+}
+
+.quickprofile {
+  padding:10px;
 }
 
 

@@ -45,11 +45,10 @@
   }
   
   .postsection {
-    background-color: #11111f;
     color: #fff;
     padding: 20px;
-    display: flex;
-    margin-left: 500px;
+    display: inline-grid;
+    margin-left: 382px;
   }
 
   

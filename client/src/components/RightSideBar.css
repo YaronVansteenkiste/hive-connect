@@ -1,9 +1,25 @@
 .rightbar {
     background-color: #0a0a13;
     color: #fff;
-    width: 20%;
+    width: 325px;
     margin-left: auto;
     border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+    height: auto;
+    right:0;
+    position: absolute;
+  }
+
+  .cover-image {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: 5px;
+  }
+
+  .bottomright {
+    margin-top: 10px;
+    height: auto;
   }
 
   .expand {margin-top: 80px;}
