@@ -1,12 +1,10 @@
 import './App.css';
-import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import { Form, Button } from 'react-bootstrap';
 
 import Register from './pages/register';
 import Login from './pages/login'
@@ -24,6 +22,7 @@ import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import LeftSidebar from './components/LeftSideBar.js';
 
 import Profile from './pages/profile.js';
+import SubmitPost from './pages/submit';
 
 
 
@@ -38,6 +37,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/users/:id" element={<Profile />} />
+          <Route path = "/submit" element={<SubmitPost/>} />
         </Routes>
       </Router>
     </QueryClientProvider>

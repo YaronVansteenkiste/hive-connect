@@ -2,12 +2,18 @@ import React from "react";
 import './RightSideBar.css'
 import { Button } from 'react-bootstrap'
 import exampleCover from './images/example3.jpg'
-
+import { useNavigate } from "react-router-dom";
 
 function RightSideBar() {
+  const history = useNavigate();
+
+  function goCreate() {
+    history("/submit");
+  }
+
   return (
     <div id='rightbar' className='rightbar'>
-    <img class="cover-image" src={exampleCover} alt="example"/>
+    <img className="cover-image" src={exampleCover} alt="example"/>
       <h3>CyberpunkCity</h3>
       <div className="rightbartop">
         <hr></hr>
@@ -20,7 +26,7 @@ function RightSideBar() {
         <h5>Augmented</h5>
         <label>56.3M</label>
         <hr></hr>
-        <Button>Create Post</Button>
+        <Button onClick= {goCreate}>Create Post</Button>
         <hr></hr>
         <hr></hr>
         <h5>Rules</h5>

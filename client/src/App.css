@@ -1,3 +1,32 @@
+@media (max-width: 650px) {
+  .createpostcontainer {
+    display: none !important;
+  }
+
+  .post-container {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 1350px) {
+  .leftsidebar {
+    display: none;
+  }
+  
+  .rightbar {
+    display: none;
+  }
+  .postsection {
+    display: none;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .header {
+    margin-left: 0px !important;
+  }
+}
+
+
 @keyframes move-it {
   0% {
     background-position: initial;

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Stack } from 'react-bootstrap';
+import { Button, Stack, Navbar, Container, Nav, NavDropdown, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket, faFire, faWind, faEllipsis , faPlus, faMessage, faMobile, faFaceLaugh} from '@fortawesome/free-solid-svg-icons';
+import { faRocket, faFire, faWind, faEllipsis, faPlus, faMessage, faMobile, faFaceLaugh } from '@fortawesome/free-solid-svg-icons';
 
 import { UserContext } from './context/UserContext.js'
 
@@ -27,13 +27,13 @@ function Header() {
   const [openUpdate, setOpenUpdate] = useState(false);
 
   const { isLoading, error, data } = useQuery(["user"], () =>
-    makeRequest.get("/users/find/" + currentUser.id).then((res) => {
-      return res.data;
-    })
-  );
+        makeRequest.get("/users/find/" + currentUser.id).then((res) => {
+            return res.data;
+        })
+    );
 
   const logout = async () => {
-    await axios.post("http://localhost:8800/api/auth/logout",  {
+    await axios.post("http://localhost:8800/api/auth/logout", {
       withCredentials: true,
     });
     localStorage.clear();
@@ -42,58 +42,68 @@ function Header() {
 
   const username = localStorage.getItem('user');
 
-  function dropDownClick() {
-    document.getElementById('myDropdown').classList.toggle("show");
-    document.getElementById('rightbar').classList.toggle('expand');
-  }
+function dropDownClick() {
+  document.getElementById('myDropdown').classList.toggle("show");
+  document.getElementById('rightbar').classList.toggle('expand');
+}
 
-  return (
-    <div className='navbar'>
-      <div className='filters'>
-      <Button className='headerbuttons' variant="dark"><FontAwesomeIcon icon={faRocket} /> Best</Button>
-        <Button className='headerbuttons' variant="dark"><FontAwesomeIcon icon={faFire} /> Hot</Button>
-        <Button className='headerbuttons' variant="dark"><FontAwesomeIcon icon={faWind} /> Top</Button>
-        <Button className='headerbuttons' variant="dark"> <FontAwesomeIcon icon={faEllipsis} /> </Button>
-      </div>
-      <div className='quickprofile'>
-      <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faPlus} /></Button>
-        <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faMessage} /></Button>
-        <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faMobile} /></Button>
-        <Button className='headerbuttons' variant="warning"> <FontAwesomeIcon icon={faFaceLaugh} /> </Button>
-      </div>
-      {username ? (
-        
-        <div className='profilesection' onClick={dropDownClick}>
-          <div className='profileicon'>
-            <img src={exampleImage} alt="Profile Icon" className="neon-icon" />
-          </div>
-          <div className='profilename'>
-            <div className='usernameSection'>
-              <span className="neon-text">{currentUser.username}</span>
+return (
+  <Navbar className='header' expand="lg">
+    <Container fluid>
+      <Navbar.Toggle className='header-toggler' aria-controls="navbarScroll" />
+      <Navbar.Collapse className='headercollapse' id="navbarScroll">
+        <Nav
+          className="me-auto my-2 my-lg-0"
+          style={{ maxHeight: '100px' }}
+          navbarScroll
+        >
+          <div className='filters'>
+                <Button className='headerbuttons' variant="dark"><FontAwesomeIcon icon={faRocket} /> Best</Button>
+                <Button className='headerbuttons' variant="dark"><FontAwesomeIcon icon={faFire} /> Hot</Button>
+                <Button className='headerbuttons' variant="dark"><FontAwesomeIcon icon={faWind} /> Top</Button>
+                <Button className='headerbuttons' variant="dark"> <FontAwesomeIcon icon={faEllipsis} /> </Button>
             </div>
-            <div>
-              <label id='credittag' className='neon-subtext'>{currentUser.credits} credits augmented</label>
+        </Nav>
+        <div className='quickprofile'>
+                <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faPlus} /></Button>
+                <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faMessage} /></Button>
+                <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faMobile} /></Button>
+                <Button className='headerbuttons' variant="warning"> <FontAwesomeIcon icon={faFaceLaugh} /> </Button>
+            </div>
+        {currentUser ? ( // Add a check for currentUser here
+          <div className='profilesection' onClick={dropDownClick}>
+            <div className='profileicon'>
+              <img src={exampleImage} alt="Profile Icon" className="neon-icon" />
+            </div>
+            <div className='profilename'>
+              <div className='usernameSection'>
+                <span className="neon-text">{currentUser.username}</span>
+              </div>
+              <div>
+                <label id='credittag' className='neon-subtext'>{currentUser.credits} credits augmented</label>
+              </div>
+            </div>
+            <div id='myDropdown' className='dropdown-content'>
+              <a href="/" onClick={logout}>Logout</a>
             </div>
           </div>
-          <div id='myDropdown' className='dropdown-content'>
-            <a href="/" onClick={logout}>Logout</a>
-          </div>
-        </div>
-      ) : (
-        <div className='profilesection' onClick={dropDownClick}>
-          <div className='profilename'>
-            <div className='usernameSection'>
-              <span className="neon-text">Login/Register</span>
+        ) : (
+          <div className='profilesection' onClick={dropDownClick}>
+            <div className='profilename'>
+              <div className='usernameSection'>
+                <span className="neon-text">Login/Register</span>
+              </div>
+            </div>
+            <div id='myDropdown' className='dropdown-content'>
+              <a href='/login'>Login</a>
+              <a href='/register'>Register</a>
             </div>
           </div>
-          <div id='myDropdown' className='dropdown-content'>
-            <a href='/login'>Login</a>
-            <a href='/register'>Register</a>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+        )}
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+);
 }
 
 export default Header;

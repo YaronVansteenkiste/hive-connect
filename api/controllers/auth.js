@@ -19,8 +19,7 @@ export const register = (req, res) => {
       req.body.username,
       req.body.email,
       hashedPassword,
-      req.body.name,
-      req.body.profilePic
+      req.body.name
     ];
 
     db.query(q, [values], (err, data) => {

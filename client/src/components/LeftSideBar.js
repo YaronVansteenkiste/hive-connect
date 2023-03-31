@@ -3,9 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpaceShuttle, faNetworkWired, faNewspaper, faFire, faSearch, faCalendar, faShop} from "@fortawesome/free-solid-svg-icons";
 import { FloatingLabel, Form, Button } from "react-bootstrap";
 import './LeftSideBar.css'
+import { useNavigate } from "react-router-dom";
+
 
 
 function LeftSidebar() {
+  const navigate = useNavigate();
+
+  function goHome() {
+    navigate("/");
+  }
+
   return (
     <div className="leftsidebar">
       <h5 className="logo">Hive</h5>
@@ -21,7 +29,7 @@ function LeftSidebar() {
       </form>
       <ul className="list">
         <li className="mb-2">
-          <Button className="w-100 rounded-100"><FontAwesomeIcon icon={faSpaceShuttle}/> Home</Button>
+          <Button onClick={goHome} className="w-100 rounded-100"><FontAwesomeIcon icon={faSpaceShuttle}/> Home</Button>
         </li>
         <li className="mb-2">
           <button className="btn leftsidebuttons w-100 rounded-0"><FontAwesomeIcon icon={faNetworkWired}/> Network</button>
@@ -43,7 +51,7 @@ function LeftSidebar() {
           <a href="#" className="text-light">CyberpunkCity</a>
         </li>
         <li className="mb-2">
-          <a href="#" className="text-light">TheNeonDistrict</a>
+          <a className="text-light">TheNeonDistrict</a>
         </li>
         <li className="mb-2">
           <a href="#" className="text-light">TechnoUtopia</a>

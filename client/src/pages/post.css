@@ -48,7 +48,15 @@
     color: #fff;
     padding: 20px;
     display: inline-grid;
-    margin-left: 382px;
+    margin-left: 170px;
+    width: 585px;
+    margin-right: 150px
+  }
+
+
+  .postcontainer {
+    justify-content: center;
+    display: grid;
   }
 
   

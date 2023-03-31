@@ -6,16 +6,14 @@ import { FloatingLabel, Form, Button } from "react-bootstrap";
 import exampleImage from '../components/images/example1.jpg'
 
 const Home = () => {
-
-
   return (
-    <div style={{ display: 'flex' }}>s
+    <div style={{ display: 'flex' }}>
       <LeftSidebar />
       <div className="hivebody">
         <div>
           <Header></Header>
         </div>
-        <div>
+        <div className="postcontainer">
           <div className="postsection">
             <div className="createpostcontainer">
               <div className='createprofileicon'>
@@ -26,9 +24,8 @@ const Home = () => {
               </FloatingLabel>
             </div>
             <Post></Post>
-            <RightSideBar></RightSideBar>
           </div>
-
+          <RightSideBar></RightSideBar>
         </div>
       </div>
     </div>
