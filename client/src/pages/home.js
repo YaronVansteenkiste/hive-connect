@@ -1,6 +1,6 @@
 import LeftSidebar from "../components/LeftSideBar";
 import Header from "../components/Header";
-import Post from "../components/post";
+import PostList from "../components/posts";
 import RightSideBar from "../components/RightSideBar";
 import { FloatingLabel, Form, Button } from "react-bootstrap";
 import exampleImage from '../components/images/example1.jpg'
@@ -28,7 +28,7 @@ const Home = () => {
                 <Form.Control className='searchbar' placeholder="Create Post.." />
               </FloatingLabel>
             </div>
-            <Post></Post>
+            <PostList></PostList>
           </div>
           <RightSideBar></RightSideBar>
         </div>

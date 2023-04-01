@@ -19,7 +19,7 @@ export const register = (req, res) => {
       req.body.username,
       req.body.email,
       hashedPassword,
-      req.body.name
+      req.body.name,
     ];
 
     db.query(q, [values], (err, data) => {
@@ -53,10 +53,9 @@ export const login = (req, res) => {
         httpOnly: true,
       })
       .status(200)
-      .json({ ...others, id: data[0].id });
+      .json(others);
   });
 };
-
 
 export const logout = (req, res) => {
   res.clearCookie("accessToken",{

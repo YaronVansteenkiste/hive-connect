@@ -14,6 +14,7 @@
     "bootstrap": "^5.2.3",
     "jquery-file-upload": "^4.0.11",
     "mdb-react-ui-kit": "^5.1.0",
+    "moment": "^2.29.4",
     "query": "^0.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",

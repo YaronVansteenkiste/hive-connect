@@ -55,7 +55,7 @@ return (
                 <Button className='headerbuttons' variant="warning"><FontAwesomeIcon icon={faMobile} /></Button>
                 <Button className='headerbuttons' variant="warning"> <FontAwesomeIcon icon={faFaceLaugh} /> </Button>
             </div>
-        {currentUser ? ( // Add a check for currentUser here
+        {currentUser ? ( 
           <div className='profilesection' onClick={dropDownClick}>
             <div className='profileicon'>
               <img src={exampleImage} alt="Profile Icon" className="neon-icon" />

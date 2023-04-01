@@ -7,10 +7,12 @@ export const getUser = (req, res) => {
 
   db.query(q, [userId], (err, data) => {
     if (err) return res.status(500).json(err);
+    if (data.length === 0) return res.status(404).json("User not found");
     const { password, ...info } = data[0];
     return res.json(info);
   });
 };
+
 
 export const updateUser = (req, res) => {
   const token = req.cookies.accessToken;
@@ -20,12 +22,12 @@ export const updateUser = (req, res) => {
     if (err) return res.status(403).json("Token is not valid!");
 
     const q =
-      "UPDATE users SET `name`=?,`profilePic`=?,WHERE id=? ";
+      "UPDATE users SET `username`=?,`profilePic`=?,WHERE id=? ";
 
     db.query(
       q,
       [
-        req.body.name,
+        req.body.username,
         req.body.profilePic,
         userInfo.id,
       ],
