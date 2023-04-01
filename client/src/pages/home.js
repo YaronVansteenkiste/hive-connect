@@ -1,11 +1,16 @@
 import LeftSidebar from "../components/LeftSideBar";
 import Header from "../components/Header";
-import Post from "./post";
+import Post from "../components/post";
 import RightSideBar from "../components/RightSideBar";
 import { FloatingLabel, Form, Button } from "react-bootstrap";
 import exampleImage from '../components/images/example1.jpg'
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  function goCreate() {
+    navigate("/submit");
+  }
   return (
     <div style={{ display: 'flex' }}>
       <LeftSidebar />
@@ -19,7 +24,7 @@ const Home = () => {
               <div className='createprofileicon'>
                 <img src={exampleImage} alt="Profile Icon" className="neon-icon" />
               </div>
-              <FloatingLabel className='searchtext' controlId="floatingInputGrid" label="Create Post..">
+              <FloatingLabel onClick={goCreate} className='searchtext' controlId="floatingInputGrid" label="Create Post..">
                 <Form.Control className='searchbar' placeholder="Create Post.." />
               </FloatingLabel>
             </div>

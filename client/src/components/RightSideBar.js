@@ -5,10 +5,10 @@ import exampleCover from './images/example3.jpg'
 import { useNavigate } from "react-router-dom";
 
 function RightSideBar() {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   function goCreate() {
-    history("/submit");
+    navigate("/submit");
   }
 
   return (

@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Button, Stack, Navbar, Container, Nav, NavDropdown, Form } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Button, Navbar, Container, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket, faFire, faWind, faEllipsis, faPlus, faMessage, faMobile, faFaceLaugh } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,28 +9,15 @@ import './Header.css';
 
 import exampleImage from './images/example1.jpg';
 
-import Update from "../components/update/Update.js"
-
 import axios from 'axios';
-import { makeRequest } from "../axios.js";
-import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
-
 
 
 
 function Header() {
 
-  const { login } = useContext(UserContext);
   const { setCurrentUser } = useContext(UserContext);
   const { currentUser } = useContext(UserContext);
 
-  const [openUpdate, setOpenUpdate] = useState(false);
-
-  const { isLoading, error, data } = useQuery(["user"], () =>
-        makeRequest.get("/users/find/" + currentUser.id).then((res) => {
-            return res.data;
-        })
-    );
 
   const logout = async () => {
     await axios.post("http://localhost:8800/api/auth/logout", {
@@ -39,8 +26,6 @@ function Header() {
     localStorage.clear();
     setCurrentUser(null);
   }
-
-  const username = localStorage.getItem('user');
 
 function dropDownClick() {
   document.getElementById('myDropdown').classList.toggle("show");
@@ -84,6 +69,13 @@ return (
               </div>
             </div>
             <div id='myDropdown' className='dropdown-content'>
+              <a href='/users/1'>Profile</a>
+              <a href='/settings'>User Settings</a>
+              <hr></hr>
+              <a href='/'>Create Network</a>
+              <a href='/'>Credits</a>
+              <a href='/'>CyberSub</a>
+              <a href='/'>Support</a>
               <a href="/" onClick={logout}>Logout</a>
             </div>
           </div>

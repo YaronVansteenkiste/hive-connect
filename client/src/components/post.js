@@ -9,14 +9,10 @@ import './post.css'
 
 
 function Post() {
-
-  const posttitle = 'Test post'
-  const posttitle2 = 'Test post2'
-
   return (
     <div className='post-list'>
       <div className="post-container">
-        <h3>{posttitle}</h3>
+        <h3>Test post</h3>
         <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
         <div className='postcontent'>
           <div className='likecontainer'>
@@ -39,7 +35,7 @@ function Post() {
         </Stack>
       </div>
       <div className="post-container">
-        <h3>{posttitle2}</h3>
+        <h3>Test post2</h3>
         <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
         <div className='postcontent'>
           <div className='likecontainer'>
