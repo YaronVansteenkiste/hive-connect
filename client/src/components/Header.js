@@ -2,13 +2,9 @@ import React, { useContext } from 'react';
 import { Button, Navbar, Container, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket, faFire, faWind, faEllipsis, faPlus, faMessage, faMobile, faFaceLaugh } from '@fortawesome/free-solid-svg-icons';
-
 import { UserContext } from './context/UserContext.js'
-
 import './Header.css';
-
 import exampleImage from './images/example1.jpg';
-
 import axios from 'axios';
 
 
