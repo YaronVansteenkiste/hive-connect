@@ -47,8 +47,8 @@ function Post({ post }) {
           <br /><FontAwesomeIcon icon={faThumbsDown} />
         </div>
         <div>
-          {/*
-          <img className='post-image' src={postImageExample} alt='example' />*/}
+          {
+          <img className='post-image' src={postImageExample} alt='example' />}
         </div>
       </div>
       <Stack className='poststats' direction='horizontal' gap='4'>
