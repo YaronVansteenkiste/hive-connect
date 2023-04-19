@@ -11,6 +11,7 @@ import Home from './pages/home'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Profile from './pages/profile.js';
 import SubmitPost from './pages/submit';
+import Postpage from './pages/postpage';
 
 const queryClient = new QueryClient();
 
@@ -25,7 +26,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/users/:id" element={<Profile />} />
           <Route path="/submit" element={<SubmitPost />} />
-          <Route path="/post/:id" element={<postpage />} />
+          <Route path="/post/:id" element={<Postpage />} />
         </Routes>
       </Router>
     </QueryClientProvider>

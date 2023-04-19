@@ -1,15 +1,16 @@
-import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { makeRequest } from "../axios";
 import { useLocation } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../components/context/UserContext.js";
 import Update from "../components/update/Update.js";
-import { useState } from "react";
-import { Button } from "react-bootstrap";
 import ProfilePictureUpload from '../components/update/ProfilePictureUpload.js'
-import axios from "axios";
+import './profile.css'
+import examplePic from '../components/images/example1.jpg'
+import LeftSidebar from "../components/LeftSideBar";
+import Header from "../components/Header";
+import RightSideBar from "../components/RightSideBar";
 
-//TODO
 
 const Profile = () => {
   const [user, setUser] = useState({});
@@ -24,44 +25,67 @@ const Profile = () => {
     })
   );
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const res = await axios.get("http://localhost:8800/api/users/find/1", {
-        withCredentials: true,
-      });
-      setUser(res.data);
-    };
-    fetchUser();
-  }, []);
-
-
-
-
   return (
-    <div className="profile">
-      {isLoading ? (
-        "loading"
-      ) : (
-        <>
-          <div className="images">
-            <h1>{user.name}'s Profile</h1>
-            <img src={user.profilePic} alt="Profile" />
-            <ProfilePictureUpload />
-          </div>
-          <div className="profileContainer">
-            <div className="uInfo">
-              <div className="center">
-                <span>{data.name}</span>
-                <div className="info">
+    <div style={{ display: 'flex' }}>
+      <LeftSidebar />
+      <div className="hivebody">
+        <Header></Header>
+        <div className="postcontainer">
+          <RightSideBar></RightSideBar>
+        </div>
+        <div className="profile">
+          {isLoading ? (
+            "loading"
+          ) : (
+            <>
+              <div className="profile-header">
+                <h1 className="profile-title">{data.username}'s Profile</h1>
+                <div className="profile-picture">
+                  <img src={examplePic} alt="Profile" />
+                  <ProfilePictureUpload />
                 </div>
               </div>
-              <div className="right">
+              <div className="profile-info">
+                <div className="profile-section">
+                  <h2>Basic Information</h2>
+                  <div className="profile-data">
+                    <div className="profile-label">Name:</div>
+                    <div className="profile-value">{data.name}</div>
+                  </div>
+                  <div className="profile-data">
+                    <div className="profile-label">Email:</div>
+                    <div className="profile-value">{data.email}</div>
+                  </div>
+                  <div className="profile-data">
+                    <div className="profile-label">Bio:</div>
+                    <div className="profile-value">{data.bio}</div>
+                  </div>
+                </div>
+                <div className="profile-section">
+                  <h2>Contact Information</h2>
+                  <div className="profile-data">
+                    <div className="profile-label">Phone:</div>
+                    <div className="profile-value">{data.phone}</div>
+                  </div>
+                  <div className="profile-data">
+                    <div className="profile-label">Address:</div>
+                    <div className="profile-value">{data.address}</div>
+                  </div>
+                </div>
+                <div className="profile-actions">
+                  <button
+                    className="profile-edit-btn"
+                    onClick={() => setOpenUpdate(true)}
+                  >
+                    Edit Profile
+                  </button>
+                </div>
               </div>
-            </div>
-          </div>
-        </>
-      )}
-      {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
+            </>
+          )}
+          {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
+        </div>
+      </div>
     </div>
   );
 };

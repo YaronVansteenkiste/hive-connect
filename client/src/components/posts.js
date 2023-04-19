@@ -32,11 +32,15 @@ function timeSince(date) {
     }
     return "posted " + Math.floor(seconds) + " second" + (seconds > 1 ? "s" : "") + " ago";
   }
-function Post({ post }) {
 
+function goPage () {
+  window.open('/post/1', "_self")
+}
+
+function Post({ post }) {
   const postCreatedAt = post.createdAt;
   return (
-    <div className='post-container'>
+    <div onClick={goPage} className='post-container'>
       <h1>{post.title}</h1>
       <label>{timeSince(postCreatedAt)} by {post.username}</label>
       <div dangerouslySetInnerHTML={{ __html: post.desc }}></div>
@@ -52,7 +56,6 @@ function Post({ post }) {
         </div>
       </div>
       <Stack className='poststats' direction='horizontal' gap='4'>
-        {/* replace post.comments with 0 */}
         <Button className='btn btn-dark bg-black'>
           <FontAwesomeIcon icon={faComment} /> {0} Comments
         </Button>
